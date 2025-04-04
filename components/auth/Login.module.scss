@@ -1,0 +1,112 @@
+
+.loading{
+  @apply rounded-bl-lg;
+  width: 849px;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: calc(100% - 32px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2{
+    @apply text-font;
+  }
+}
+
+.login{
+  &__social{
+    @apply bg-grey3;
+    padding: 81px 50px 52px 77px;
+    display: flex;
+    position: relative;
+  }
+
+  &__socialLinks{
+    width: 50%;
+    min-width: 330px;
+    text-align: center;
+  }
+    h4{
+      @apply ml-10;
+    }
+
+  &__img{
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__form{
+    @apply bg-primary;
+    padding: 26px 50px 52px 77px;
+
+    h4{
+      @apply bg-alt ml-10;
+    }
+  }
+
+  &__registration{
+    @apply bg-primary rounded-bl-lg;
+    padding-left: 77px;
+    display: flex;
+
+    p{
+      @apply mb-6;
+      font-size: 32px;
+    }
+  }
+
+  &__registrationText{
+    @apply text-white;
+    padding: 73px 0 63px 0;
+    width: 50%;
+    a{
+      @apply text-white;
+    }
+  }
+
+  &__registrationImg{
+    width: 60%;
+    margin-left: -55px;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .login{
+
+    &__social{
+      justify-content: center;
+    }
+
+    &__socialLinks {
+      width: unset;
+      min-width: unset;
+    }
+
+    &__social ,&__form ,&__registration{
+      @apply px-6;
+
+      h4{
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+
+    &__img, &__registrationImg {
+      display: none;
+    }
+
+    &__registration{
+      justify-content: center;
+    }
+
+    &__registrationText{
+      width: unset;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

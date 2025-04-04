@@ -1,0 +1,7 @@
+.header {
+  @apply flex justify-between items-center w-full pb-8 mt-8;
+
+  .title {
+    @apply text-primary font-bold mb-4;
+  }
+}

@@ -1,0 +1,34 @@
+.listing {
+  .buttons {
+    @apply inline-flex;
+
+    .icon {
+      @apply mr-2.5;
+    }
+
+    button:first-child {
+      @apply mr-1.5;
+
+      &:hover {
+        > svg {
+          @apply translate-x-0;
+        }
+      }
+    }
+  }
+
+  a {
+    @apply text-primary hover:no-underline
+  }
+}
+
+.staticBlock {
+  h5 {
+    font-size: 18px;
+  }
+  .content {
+    @apply text-primary;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}

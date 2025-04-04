@@ -1,0 +1,39 @@
+.menu {
+  @apply p-0 list-none;
+
+  li {
+    @apply max-w-[250px] rounded-lg mb-1;
+
+    &.active {
+      @apply bg-primary bg-opacity-5 font-bold;
+
+      a,svg {
+        @apply text-primary;
+      }
+    }
+
+    a {
+      @apply flex items-center rounded-lg px-4 py-2.5 no-underline leading-6 hover:bg-grey hover:bg-opacity-20;
+
+      .icon {
+        @apply mr-2.5 hover:no-underline hover:bg-grey hover:bg-opacity-5;
+      }
+
+      &.danger {
+        @apply text-danger hover:bg-danger hover:bg-opacity-5;
+      }
+    }
+  }
+}
+
+.creditsBlock {
+  @apply text-primary mt-8 whitespace-nowrap;
+
+  h4 {
+    @apply mb-4;
+  }
+
+  .creditsTitle {
+    @apply pb-4 text-font text-sm;
+  }
+}
