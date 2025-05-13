@@ -1,7 +1,7 @@
 'use client';
 import useUser from '@/grandus-lib/hooks/useUser';
 
-import SocialLogin from '@/modules/userzone/components/auth/SocialLogin';;
+import SocialLogin from '@/modules/userzone/components/auth/SocialLogin';
 import LoginForm from 'components/forms/Login';
 import CustomButton from '@/components/_other/button/CustomButton';
 
@@ -28,7 +28,7 @@ const Login = ({ returnUrl, afterLoginCallback, closeLogin }) => {
         <h2 className="d-block my-4 text-center">
           <br />
           <br />
-          <span>🚧</span> pracujem s prihlásením...
+          <span>🚧</span> {t('login.loading')}
           <br />
           <br />
         </h2>
@@ -42,7 +42,7 @@ const Login = ({ returnUrl, afterLoginCallback, closeLogin }) => {
         <h2 className="d-block my-4">
           <br />
           <br />
-          <span>🎉</span> Vitajte späť,{' '}
+          <span>🎉</span> {t('login.success')},{' '}
           {user?.fullName ? user?.fullName : user?.email}
           <br />
           <br />
@@ -55,7 +55,7 @@ const Login = ({ returnUrl, afterLoginCallback, closeLogin }) => {
     <>
       <div className={styles.login__social}>
         <div className={styles.login__socialLinks}>
-          <h4 className="mb-3">Prihlásiť sa pomocou</h4>
+          <h4 className="mb-3">{t('login.social')}</h4>
           <SocialLogin returnUrl={returnUrl} layout="row" />
         </div>
         <div>
@@ -70,18 +70,17 @@ const Login = ({ returnUrl, afterLoginCallback, closeLogin }) => {
         </div>
       </div>
       <div className={styles.login__form}>
-        <h4 className="mb-3">Prihlásenie</h4>
+        <h4 className="mb-3">{t('login.title')}</h4>
         <LoginForm afterLoginCallback={afterLoginCallback} />
       </div>
       <div className={styles.login__registration}>
         <div className={styles.login__registrationText}>
           <p>
             <strong>
-              <span>{t('Registrujte sa')}</span>
+              <span>{t('login.title')}</span>
               <br />
             </strong>
-            {t('a získajte ')} <strong>{t('zľavy, ')}</strong> <br />
-            <strong>{t(' bonusy a rôzne výhody')}</strong>.
+            {t('login.register.description')}
           </p>
           <CustomButton
             href="/registracia"
@@ -92,7 +91,7 @@ const Login = ({ returnUrl, afterLoginCallback, closeLogin }) => {
             fullWidth={true}
             onClick={closeLogin}
           >
-            {upperFirst(t('registrujte sa'))}
+            {upperFirst(t('login.register.button'))}
           </CustomButton>
         </div>
         <div className={styles.login__registrationImg}>
