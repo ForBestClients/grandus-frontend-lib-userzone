@@ -1,5 +1,5 @@
 import get from "lodash/get";
-import Link from "next/link";
+import LocalizedLink from '@/components/localizedLink/LocalizedLink';
 
 import CustomButton from "@/components/_other/button/CustomButton";
 import {redirect} from "next/navigation";
@@ -32,7 +32,7 @@ const LogoutPage = () => {
             <p>
                 Ste prihlásený ako <strong>{get(user, "email")}</strong>
             </p>
-            <Link href="/odhlasenie">Odhlasit</Link>
+            <LocalizedLink href="/odhlasenie">Odhlasit</LocalizedLink>
         </div>
     );
 };

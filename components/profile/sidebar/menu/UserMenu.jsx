@@ -5,7 +5,7 @@ import useUser from '@/grandus-lib/hooks/useUser';
 
 import get from 'lodash/get';
 
-import Link from 'next/link';
+import LocalizedLink from '@/components/localizedLink/LocalizedLink';
 
 import Box from '@/components/_other/box/Box';
 import UserSettingsIcon from '@/components/_other/icons/UserSettingsIcon';
@@ -27,34 +27,34 @@ const UserMenu = () => {
   return (
     <ul className={styles?.menu}>
       <li className={pathname === '/profil' ? styles.active : ''}>
-        <Link href="/profil">
+        <LocalizedLink href="/profil">
           <UserSettingsIcon className={styles?.icon} />
           {t('profile.menu.profile_settings')}
-        </Link>
+        </LocalizedLink>
       </li>
       <li className={startsWith(pathname, '/profil/objednavky') ? styles.active : ''}>
-        <Link href="/profil/objednavky">
+        <LocalizedLink href="/profil/objednavky">
           <OrdersIcon className={styles?.icon} />
           {t('profile.menu.orders')}
-        </Link>
+        </LocalizedLink>
       </li>
       <li>
         <Divider />
       </li>
       <li>
-        <Link href="/oblubene">
+        <LocalizedLink href="/oblubene">
           <HeartIcon className={styles?.icon} />
           {t('profile.menu.wishlist')}
-        </Link>
+        </LocalizedLink>
       </li>
       <li>
         <Divider />
       </li>
       <li>
-        <Link href="/odhlasenie" className={styles?.danger}>
+        <LocalizedLink href="/odhlasenie" className={styles?.danger}>
           <LogoutIcon className={styles?.icon} />
           {t('profile.menu.logout')}
-        </Link>
+        </LocalizedLink>
       </li>
 
       <li className={styles.creditsBlock}>

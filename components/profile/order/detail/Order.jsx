@@ -16,7 +16,7 @@ import Box from "@/components/_other/box/Box";
 import Divider from "@/components/_other/divider/Divider";
 import upperFirst from "lodash/upperFirst";
 import ProfileHeader from "@/components/pages/profile/header/ProfileHeader";
-import Link from "next/link";
+import LocalizedLink from '@/components/localizedLink/LocalizedLink';
 import useSWR from "swr";
 import TableSkeleton from "@/components/pages/profile/skeletons/TableSkeleton";
 import EmptyComponent from "@/components/_other/emptyComponent/EmptyComponent";
@@ -136,9 +136,9 @@ const OrderDetail = ({ orderId }) => {
                 {...headerData}
                 breadcrumbs={{
                     childrens: [
-                        <Link key={1} href="/profil/objednavky">
+                        <LocalizedLink key={1} href="/profil/objednavky">
                             {upperFirst(t('profile.order.listing.orders'))}
-                        </Link>,
+                        </LocalizedLink>,
                     ],
                     current: `Objednávka ${get(order, "orderNumber", "")}`,
                   }}

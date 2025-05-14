@@ -1,9 +1,12 @@
 import {Suspense} from "react";
 import WishlistContent from "../../components/profile/wishlist/WishlistContent";
 import SEO from '@/utils/seo';
+import { initTranslations } from '@/app/i18n';
 
 export const generateMetadata = async ({ params }) => {
-  return SEO.getDefaultMetaObject('Obľúbené produkty', '');
+  const { t } = await initTranslations(params?.locale);
+
+  return SEO.getDefaultMetaObject(t('wishlist_page.title'), '');
 };
 
 const Wishlist = () => {

@@ -198,18 +198,19 @@ const ProfileForm = ({ towns, countries, alert }) => {
         handleBlur,
         handleSubmit,
     } = useFormikContext();
+    const {t} = useTranslation();
 
     const isCompany = !!toNumber(values?.isCompany);
 
     return (
         <form onSubmit={handleSubmit}>
             <div className="mt-6">
-                <h3 className="mb-3">Osobné údaje</h3>
+                <h3 className="mb-3">{t('profile_form.title')}</h3>
                 <div className="flex gap-8">
                     <div className="w-full md:w-1/2">
                         <TextInput
                             required
-                            label="Meno:"
+                            label={t('profile_form.name.label')}
                             error={touched?.name && errors?.name ? errors.name : ""}
                             inputProps={{
                                 id: "name",
@@ -224,7 +225,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
                     <div className="w-full md:w-1/2">
                         <TextInput
                             required
-                            label="Priezvisko:"
+                            label={t('profile_form.surname.label')}
                             error={
                                 touched?.surname && errors?.surname ? errors.surname : ""
                             }
@@ -243,7 +244,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
                     <div className="w-full md:w-1/2">
                         <TextInput
                             required
-                            label="E-mail:"
+                            label={t('profile_form.email.label')}
                             error={touched?.email && errors?.email ? errors.email : ""}
                             inputProps={{
                                 id: "email",
@@ -259,7 +260,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
                     <div className="w-full md:w-1/2">
                         <TextInput
                             required
-                            label="Telefón:"
+                            label={t('profile_form.phone.label')}
                             error={touched?.phone && errors?.phone ? errors.phone : ""}
                             inputProps={{
                                 id: "phone",
@@ -276,10 +277,10 @@ const ProfileForm = ({ towns, countries, alert }) => {
             </div>
 
             <div className="mt-6">
-                <h3 className="mb-3">Adresa</h3>
+                <h3 className="mb-3">{t('profile_form.address')}</h3>
                 <TextInput
                     required
-                    label="Ulica:"
+                    label={t('profile_form.street.label')}
                     error={touched?.street && errors?.street ? errors.street : ""}
                     inputProps={{
                         id: "street",
@@ -294,7 +295,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
                     <div className="w-full md:w-3/5">
                         <TextInput
                             required
-                            label="Mesto:"
+                            label={t('profile_form.city.label')}
                             error={touched?.city && errors?.city ? errors.city : ""}
                             inputProps={{
                                 id: "city",
@@ -309,7 +310,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
                     <div className="w-full md:w-2/5">
                         <TextInput
                             required
-                            label="PSČ:"
+                            label={t('profile_form.zip.label')}
                             error={touched?.zip && errors?.zip ? errors.zip : ""}
                             inputProps={{
                                 id: "zip",
@@ -325,7 +326,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
                     </div>
                 </div>
                 <SelectInput
-                    label="Krajina:"
+                    label={t('profile_form.country.label')}
                     value={values?.countryId}
                     error={
                         touched?.countryId && errors?.countryId ? errors.countryId : ""
@@ -349,7 +350,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
 
             <div className="mt-6">
                 <CheckboxInput
-                    label="Nakupujete ako firma? Želáte si pridať firemné údaje?"
+                    label={t('profile_form.is_company.label')}
                     error={
                         touched?.isCompany && errors?.isCompany ? errors.isCompany : ""
                     }
@@ -364,12 +365,12 @@ const ProfileForm = ({ towns, countries, alert }) => {
                     }}
                 />
                 <div className={`${!isCompany ? "hidden" : ""}`}>
-                    <h3 className="mb-3">Firemné údaje</h3>
+                    <h3 className="mb-3">{t('profile_form.company.title')}</h3>
                     <div className={`${!isCompany ? "hidden" : ""}`}>
                         <div className="w-full">
                             <TextInput
                                 required
-                                label="Názov spoločnosti:"
+                                label={t('profile_form.company.label')}
                                 error={
                                     touched?.companyName && errors?.companyName
                                         ? errors.companyName
@@ -389,7 +390,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
                             <div className="w-full md:w-1/3">
                                 <TextInput
                                     required
-                                    label="IČO:"
+                                    label={t('profile_form.ico.label')}
                                     error={touched?.surname && errors?.ico ? errors.ico : ""}
                                     inputProps={{
                                         id: "ico",
@@ -403,7 +404,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
                             <div className="w-full md:w-1/3">
                                 <TextInput
                                     required
-                                    label="DIČ:"
+                                    label={t('profile_form.dic.label')}
                                     error={touched?.dic && errors?.dic ? errors.dic : ""}
                                     inputProps={{
                                         id: "dic",
@@ -417,7 +418,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
                             <div className="w-full md:w-1/3">
                                 <TextInput
                                     required
-                                    label="IČ DPH:"
+                                    label={t('profile_form.icDph.label')}
                                     error={touched?.icDPH && errors?.icDPH ? errors.icDPH : ""}
                                     inputProps={{
                                         id: "icDPH",
@@ -435,7 +436,7 @@ const ProfileForm = ({ towns, countries, alert }) => {
             <div className="mt-4">
                 {!isEmpty(alert) ? <Alert className="mb-3" {...alert} /> : null}
                 <CustomButton round htmlType="submit" fullWidth loading={isSubmitting}>
-                    Uložiť
+                  {t('profile_form.save_button')}
                 </CustomButton>
             </div>
         </form>
