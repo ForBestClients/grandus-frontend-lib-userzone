@@ -3,7 +3,7 @@ import useUser from '@/grandus-lib/hooks/useUser';
 
 import SocialLogin from '@/modules/userzone/components/auth/SocialLogin';;
 import LoginForm from 'components/forms/Login';
-import CustomButton from '@/components/_other/button/CustomButton';
+import Button from '@/components/_other/button/Button';
 
 import styles from './Login.module.scss';
 import upperFirst from 'lodash/upperFirst';
@@ -83,7 +83,7 @@ const Login = ({ returnUrl, afterLoginCallback, closeLogin }) => {
             {t('a získajte ')} <strong>{t('zľavy, ')}</strong> <br />
             <strong>{t(' bonusy a rôzne výhody')}</strong>.
           </p>
-          <CustomButton
+          <Button
             href="/registracia"
             as={`/registracia`}
             htmlType="a"
@@ -93,7 +93,7 @@ const Login = ({ returnUrl, afterLoginCallback, closeLogin }) => {
             onClick={closeLogin}
           >
             {upperFirst(t('registrujte sa'))}
-          </CustomButton>
+          </Button>
         </div>
         <div className={styles.login__registrationImg}>
           <ImageNext

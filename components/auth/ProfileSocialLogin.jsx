@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation';
 
-import CustomButton from '@/components/_other/button/CustomButton';
+import Button from '@/components/_other/button/Button';
 import get from 'lodash/get';
 
 import useCart from '@/grandus-lib/hooks/useCart';
@@ -93,7 +93,7 @@ const SocialLogin = ({
       <div className='row justify-content-center align-items-top'>
         {googleLoginEnabled ? (
           <div className={'col-auto text-center justify-content-center'}>
-            <CustomButton
+            <Button
               htmlType='a'
               type='primary'
               size='google'
@@ -102,7 +102,7 @@ const SocialLogin = ({
               href={`${process.env.NEXT_PUBLIC_OAUTH_HOST}/api/v2/auth/google?${redirectUrlQuery}`}
             >
               <ImageNext src={googleIcon} className='' alt='google logo' />
-            </CustomButton>
+            </Button>
 
             {
               user?.hasGoogleLogin
@@ -138,7 +138,7 @@ const SocialLogin = ({
 
         {facebokLoginEnabled ? (
           <div className={'col-auto'}>
-            <CustomButton
+            <Button
               htmlType='a'
               type='primary'
               size='social'
@@ -154,7 +154,7 @@ const SocialLogin = ({
                 className=''
                 alt='Facebook logo'
               />
-            </CustomButton>
+            </Button>
 
             {
               user?.hasFacebookLogin

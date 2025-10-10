@@ -22,7 +22,7 @@ import {ZIP_REGEX, PHONE_NUMBER_REGEX, CITY_REGEX} from "constants/AppConstants"
 import TextInput from "components/_other/form/TextInput";
 import SelectInput from "components/_other/form/SelectInput";
 import CheckboxInput from "components/_other/form/CheckboxInput";
-import CustomButton from "@/components/_other/button/CustomButton";
+import Button from "@/components/_other/button/Button";
 import Alert from "components/_other/alert/Alert";
 import { useState } from "react";
 import {useTranslation} from "@/app/i18n/client";
@@ -434,9 +434,9 @@ const ProfileForm = ({ towns, countries, alert }) => {
             </div>
             <div className="mt-4">
                 {!isEmpty(alert) ? <Alert className="mb-3" {...alert} /> : null}
-                <CustomButton round htmlType="submit" fullWidth loading={isSubmitting}>
+                <Button round htmlType="submit" fullWidth loading={isSubmitting}>
                     Uložiť
-                </CustomButton>
+                </Button>
             </div>
         </form>
     );

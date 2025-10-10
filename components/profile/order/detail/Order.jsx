@@ -8,7 +8,7 @@ import round from "lodash/round";
 import map from "lodash/map";
 import filter from "lodash/filter";
 import isEmpty from "lodash/isEmpty";
-import CustomButton from "@/components/_other/button/CustomButton";
+import Button from "@/components/_other/button/Button";
 import Table from "@/components/_other/table/Table";
 import LoadingIcon from "@/components/_other/icons/LoadingIcon";
 import SyncIcon from "@/components/_other/icons/SyncIcon";
@@ -123,10 +123,10 @@ const OrderDetail = ({ orderId }) => {
         )}`,
         tags: get(order, "label") ? get(order, "label") : null,
         extra: [
-            <CustomButton type={"light-primary"} size={"small"} key="1" loading={isLoading || isCartLoading} onClick={() => itemsAdd(products) }>
+            <Button type={"light-primary"} size={"small"} key="1" loading={isLoading || isCartLoading} onClick={() => itemsAdd(products) }>
                 <SyncIcon />
                 <div className={"mx-2"}>{upperFirst(t('profile.order.detail.order_again'))}</div>
-            </CustomButton>,
+            </Button>,
         ],
     };
 

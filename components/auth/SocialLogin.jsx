@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation';
 
-import CustomButton from '@/components/_other/button/CustomButton';
+import Button from '@/components/_other/button/Button';
 import get from 'lodash/get';
 
 import useCart from '@/grandus-lib/hooks/useCart';
@@ -88,7 +88,7 @@ const SocialLogin = ({
       ) : null}
       <div className="mb-4 flex gap-4 justify-round md:justify-center items-center">
         {googleLoginEnabled ? (
-          <CustomButton
+          <Button
             htmlType="a"
             type="ghost"
             className={styles.google}
@@ -102,7 +102,7 @@ const SocialLogin = ({
             )}&frontendReturnUrl=${returnDomain}/api/lib/v1/auth/oauth?backUrl=${backUrl}`}
           >
             <ImageNext src={googleIcon} className="" alt="google logo" />
-          </CustomButton>
+          </Button>
         ) : null}
 
         {appleLoginEnabled ? (
@@ -110,7 +110,7 @@ const SocialLogin = ({
         ) : null}
 
         {facebokLoginEnabled ? (
-          <CustomButton
+          <Button
             htmlType="a"
             type="ghost"
             style={styleFacebook}
@@ -125,7 +125,7 @@ const SocialLogin = ({
             )}&frontendReturnUrl=${returnDomain}/api/lib/v1/auth/oauth?backUrl=${backUrl}`}
           >
             <ImageNext src={facebookIcon} className="" alt="Facebook logo" />
-          </CustomButton>
+          </Button>
         ) : null}
       </div>
     </div>
