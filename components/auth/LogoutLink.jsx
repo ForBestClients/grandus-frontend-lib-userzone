@@ -3,7 +3,7 @@
 import useUser from '@/grandus-lib/hooks/useUser';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import useCart from '@/grandus-lib/hooks/useCart';
+import { useCart } from '@/grandus-lib/hooks/useCart';
 import { useState } from 'react';
 import LoadingIcon from '@/components/_other/icons/LoadingIcon';
 
