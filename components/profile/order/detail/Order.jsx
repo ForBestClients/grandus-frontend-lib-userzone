@@ -1,7 +1,7 @@
 "use client"
 
 import {useState} from "react";
-import { useCart } from '@/grandus-lib/hooks/useCart';
+import useCart from '@/grandus-lib/hooks/useCart';
 import styles from "./Order.module.scss";
 import get from "lodash/get";
 import round from "lodash/round";

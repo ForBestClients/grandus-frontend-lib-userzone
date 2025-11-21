@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 import Button from '@/components/_other/button/Button';
 import get from 'lodash/get';
 
-import { useCart } from '@/grandus-lib/hooks/useCart';
+import useCart from '@/grandus-lib/hooks/useCart';
 import AppleSignin from './AppleSignin';
 
 import googleIcon from '@/public/assets/icons/google-logo.svg';
